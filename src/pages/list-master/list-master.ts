@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, ModalController, NavController } from 'ionic-angular';
-
+import { IonicPage, ModalController, NavController, LoadingController, Loading} from 'ionic-angular';
+import { WpProvider, Post } from '../../providers/wp/wp';
+import { Observable } from 'rxjs/Observable';
 import { Item } from '../../models/item';
 import { Items } from '../../providers';
 
@@ -10,45 +11,33 @@ import { Items } from '../../providers';
   templateUrl: 'list-master.html'
 })
 export class ListMasterPage {
-  currentItems: Item[];
+  loader: Loading;
+  posts: Observable<Post[]>;
 
-  constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController) {
-    this.currentItems = this.items.query();
+  constructor(public navCtrl: NavController, public wpProvider: WpProvider, public loadingCtrl: LoadingController) {
+    this.presentLoading();
+    this.posts = this.wpProvider.getPosts();
+    this.posts.subscribe(data => 
+    this.loader.dismiss());
+    
   }
-
-  /**
-   * The view loaded, let's query our items for the list
-   */
-  ionViewDidLoad() {
+ 
+  getUserImage(id: number) {
+    return this.wpProvider.getUserImage(id);
   }
-
-  /**
-   * Prompt the user to add a new item. This shows our ItemCreatePage in a
-   * modal and then adds the new item to our data source if the user created one.
-   */
-  addItem() {
-    let addModal = this.modalCtrl.create('ItemCreatePage');
-    addModal.onDidDismiss(item => {
-      if (item) {
-        this.items.add(item);
-      }
-    })
-    addModal.present();
+ 
+  getUserName(id: number) {
+    return this.wpProvider.getUserName(id);
   }
-
-  /**
-   * Delete an item from the list of items.
-   */
-  deleteItem(item) {
-    this.items.delete(item);
+ 
+  openPost(post: Post) {
+    this.navCtrl.push('PostPage', {post: post});
   }
-
-  /**
-   * Navigate to the detail page for this item.
-   */
-  openItem(item: Item) {
-    this.navCtrl.push('ItemDetailPage', {
-      item: item
+ 
+  presentLoading() {
+    this.loader = this.loadingCtrl.create({
+      content: "Loading..."
     });
+    this.loader.present();
   }
 }
