@@ -21,7 +21,7 @@ import {
 } from 'wp-api-angular'
 
 export function WpApiLoaderFactory(http) {
-  return new WpApiStaticLoader(http, 'https://practicallyphotography.com/wp-json/','wp/v2');
+  return new WpApiStaticLoader(http, 'https://practicallyphotography.com/wp-json/wp/v2','');
 }
 
 // The translate loader needs to know where to load i18n files
