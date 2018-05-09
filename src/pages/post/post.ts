@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Post } from '../../providers/wp-provider';
+import { Post } from '../../providers/wp/wp';
  
 @IonicPage()
 @Component({
