@@ -5,7 +5,7 @@ import { Post } from '../../providers/wp/wp';
 @IonicPage()
 @Component({
   selector: 'page-post-page',
-  templateUrl: 'post-page.html',
+  templateUrl: 'post.html',
 })
 export class PostPage {
   post: Post;
