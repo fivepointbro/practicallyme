@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/fromPromise';
 import { Observable } from 'rxjs/Observable';
-import { WpApiPosts, WpApiMedia, WpApiUsers } from 'wp-api-angular';
+import { WpApiPosts, WpApiMedia, WpApiUsers} from 'wp-api-angular';
+import { Http } from '@angular/http';
  
 export class Post {
   public media_url: Observable<string>;
@@ -11,12 +13,17 @@ export class Post {
 export class User {
   constructor(public id: number, public name: string, public userImageUrl: string) { }
 }
+
+export class Pic {
+  constructor(public url: string) { }
+}
  
 @Injectable()
 export class WpProvider {
+
   users: User[];
  
-  constructor(public wpApiPosts: WpApiPosts, public wpApiMedia: WpApiMedia, public wpApiUsers: WpApiUsers) {
+  constructor(public http: Http, public wpApiPosts: WpApiPosts, public wpApiMedia: WpApiMedia, public wpApiUsers: WpApiUsers) {
     this.wpApiUsers.getList()
       .map(res => res.json())
       .subscribe(data => {
@@ -27,7 +34,20 @@ export class WpProvider {
         }
       })
   }
- 
+
+  getMyPics(username: string): Observable<Pic[]> {
+    return this.http.get('https://practicallyphotography.com/opsec/' + username + '/dir.php')
+    .map( res => res.json())
+    .map( data => {
+    var pics = [];
+    for (let pic of data['files']) {
+      let onePic = new Pic(pic[ 'file' ]);
+      pics.push(onePic);
+    }
+      return pics;
+    })
+    ;}
+  
   getPosts(): Observable<Post[]> {
     return this.wpApiPosts.getList()
       .map(res => res.json())
@@ -41,6 +61,8 @@ export class WpProvider {
         return posts;
       });
   }
+
+  
  
   getMedia(id: number): Observable<string> {
     return this.wpApiMedia.get(id)

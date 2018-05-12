@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>My Photos</ion-title>    
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let pic of pics | async">
+    <ion-card-content>
+      <ion-card-title>
+      {{ pic.url }}
+      </ion-card-title>
+      <img src='https://practicallyphotography.com/opsec/{{ id }}/{{ pic.url }}'>
+      </ion-card-content>
+      </ion-card>
+</ion-content>

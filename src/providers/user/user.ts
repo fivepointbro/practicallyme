@@ -80,5 +80,6 @@ export class User {
    */
   _loggedIn(resp) {
     this._user = resp.user;
+    return console.log(this._user)
   }
 }

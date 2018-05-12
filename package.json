@@ -1,8 +1,8 @@
 {
-  "name": "Practically_Me",
+  "name": "practically_me",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": "PracticallyPhotography",
+  "homepage": "http://PracticallyPhotography.com/",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -28,7 +28,10 @@
     "@ionic/storage": "2.1.3",
     "@ngx-translate/core": "8.0.0",
     "@ngx-translate/http-loader": "^2.0.0",
+    "angular-local-storage": "^0.7.1",
+    "cordova-android": "7.0.0",
     "cordova-browser": "5.0.3",
+    "cordova-ios": "4.5.4",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^1.1.19",
@@ -45,7 +48,7 @@
     "@ionic/app-scripts": "3.1.9",
     "typescript": "~2.6.2"
   },
-  "description": "An Ionic project",
+  "description": "Practically Me App",
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
@@ -55,7 +58,9 @@
       "cordova-plugin-ionic-keyboard": {}
     },
     "platforms": [
-      "browser"
+      "browser",
+      "android",
+      "ios"
     ]
   }
 }

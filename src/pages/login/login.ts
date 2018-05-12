@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
-
 import { User } from '../../providers';
 import { MainPage } from '../';
 
@@ -35,8 +34,11 @@ export class LoginPage {
   // Attempt to login in through our User service
   doLogin() {
     this.user.login(this.account).subscribe((resp) => {
+      localStorage.setItem('username', resp['user_nicename']);
+      console.log("logged in as: " + localStorage.getItem('username'));
       this.navCtrl.push(MainPage);
     }, (err) => {
+      localStorage.setItem('username', 'anon');
       this.navCtrl.push(MainPage);
       // Unable to log in
       let toast = this.toastCtrl.create({

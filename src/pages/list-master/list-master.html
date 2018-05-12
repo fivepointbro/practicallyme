@@ -9,8 +9,7 @@
 <ion-content>
   <ion-card *ngFor="let post of posts | async" (click)="openPost(post)" tappable>
     <ion-card-content>
-      <ion-card-title>
-        {{ post.title }}
+      <ion-card-title [innerHTML]="post.title">
       </ion-card-title>
       <div [innerHTML]="post.excerpt"></div>
     </ion-card-content>

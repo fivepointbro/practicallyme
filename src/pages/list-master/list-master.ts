@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, ModalController, NavController, LoadingController, Loading} from 'ionic-angular';
+import { IonicPage, NavController, LoadingController, Loading} from 'ionic-angular';
 import { WpProvider, Post } from '../../providers/wp/wp';
 import { Observable } from 'rxjs/Observable';
-import { Item } from '../../models/item';
-import { Items } from '../../providers';
 
 @IonicPage()
 @Component({
