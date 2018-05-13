@@ -38,4 +38,5 @@ export class ListMasterPage {
     });
     this.loader.present();
   }
+
 }

@@ -6,18 +6,19 @@
   "USERNAME": "Username",
   "PASSWORD": "Password",
   "LOGIN": "Log in",
-  "SIGNUP": "Sign up",
+  "SIGNUP": "Continue",
 
-  "TAB1_TITLE": "Items",
-  "TAB2_TITLE": "Search",
-  "TAB3_TITLE": "Settings",
+  "TAB1_TITLE": "Articles",
+  "TAB2_TITLE": "My Photos",
+  "TAB3_TITLE": "Contact Us",
+  "TAB4_TITLE": "Promotions",
 
   "MAP_TITLE": "Map",
 
   "TUTORIAL_SKIP_BUTTON": "Skip",
   "TUTORIAL_CONTINUE_BUTTON": "Continue",
 
-  "TUTORIAL_SLIDE1_TITLE": "Welcome to the Practically Me app",
+  "TUTORIAL_SLIDE1_TITLE": "Welcome to the Practically Me App",
   "TUTORIAL_SLIDE1_DESCRIPTION": "The <b>Practically Me App</b> lets you carry your photo album wherever you go!",
 
   "TUTORIAL_SLIDE2_TITLE": "Using the app",

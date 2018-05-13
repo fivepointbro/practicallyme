@@ -7,7 +7,7 @@ import { Http } from '@angular/http';
  
 export class Post {
   public media_url: Observable<string>;
-  constructor(public authorId: number, public id: number, public title: string, public content: string, public excerpt: string, public date: string, public mediaId?: number) { }
+  constructor(public authorId: number, public id: number, public title: string, public content: string, public excerpt: string, public date: string, public url: string) { }
 }
  
 export class User {
@@ -54,8 +54,7 @@ export class WpProvider {
       .map(data => {
         var posts = [];
         for (let post of data) {
-          let onePost = new Post(post[ 'author' ], post[ 'id' ], post[ 'title' ][ 'rendered' ], post[ 'content' ][ 'rendered' ], post[ 'excerpt' ][ 'rendered' ], post[ 'date' ], post[ 'featured_media' ]);
-          onePost.media_url = this.getMedia(onePost.mediaId);
+          let onePost = new Post(post[ 'author' ], post[ 'id' ], post[ 'title' ][ 'rendered' ], post[ 'content' ][ 'rendered' ], post[ 'excerpt' ][ 'rendered' ], post[ 'date' ], post[ 'link' ]);
           posts.push(onePost);
         }
         return posts;

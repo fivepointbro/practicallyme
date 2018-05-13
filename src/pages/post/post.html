@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{ post.title }}</ion-title>
+    <ion-title [innerHTML]="post.title"></ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +15,7 @@
 
 <ion-content>
   <div [innerHTML]="post.content"></div>
+  <button ion-button icon-only (click)="regularShare()" color="#000000" clear>
+    <ion-icon class="share-icon" name="share" color="#000000"></ion-icon>
+  </button>
 </ion-content>

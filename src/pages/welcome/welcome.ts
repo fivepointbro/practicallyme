@@ -21,6 +21,7 @@ export class WelcomePage {
   }
 
   signup() {
-    this.navCtrl.push('SignupPage');
+    localStorage.setItem('username', 'anon')
+    this.navCtrl.push('TabsPage');
   }
 }
