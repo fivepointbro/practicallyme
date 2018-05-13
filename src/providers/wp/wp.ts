@@ -19,7 +19,7 @@ export class Pic {
 }
 
 export class Promo {
-  constructor(public title: number, public conten: string) { }
+  constructor(public title: number, public content: string) { }
 }
  
 @Injectable()
