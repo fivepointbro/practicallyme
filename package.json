@@ -32,7 +32,7 @@
     "angular-local-storage": "^0.7.1",
     "cordova-android": "7.0.0",
     "cordova-browser": "5.0.3",
-    "cordova-ios": "^4.5.4",
+    "cordova-ios": "4.5.4",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^1.1.19",
@@ -62,9 +62,9 @@
       "cordova-plugin-x-socialsharing": {}
     },
     "platforms": [
-      "browser",
       "android",
-      "ios"
+      "ios",
+      "browser"
     ]
   }
 }
