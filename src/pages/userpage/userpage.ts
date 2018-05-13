@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, LoadingController, Loading} from 'ionic-angular';
 import { WpProvider, Pic} from '../../providers/wp/wp';
 import { Observable } from 'rxjs/Observable';
-import { User } from '../../providers';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
 @IonicPage()

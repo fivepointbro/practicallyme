@@ -33,6 +33,7 @@ export class MyApp {
 
   pages: any[] = [
     { title: 'Login', component: 'LoginPage' },
+    { title: 'Home', component: 'TabsPage' },
   ]
 
   constructor(private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
