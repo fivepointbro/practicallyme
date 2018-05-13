@@ -17,6 +17,10 @@ export class User {
 export class Pic {
   constructor(public url: string) { }
 }
+
+export class Promo {
+  constructor(public title: number, public conten: string) { }
+}
  
 @Injectable()
 export class WpProvider {
@@ -60,6 +64,19 @@ export class WpProvider {
         return posts;
       });
   }
+
+  getPromos(): Observable<Promo[]> {
+    return this.http.get('https://practicallyphotography.com/wp-json/wp/v2/promo')
+    .map( res => res.json())
+    .map( data => {
+    var promos = [];
+    for (let promo of data) {
+      let onePromo = new Promo(promo[ 'title' ][ 'rendered' ], promo[ 'promo']);
+      promos.push(onePromo);
+    }
+      return promos;
+    })
+    ;}
 
   
  
