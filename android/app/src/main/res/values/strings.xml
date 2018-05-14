@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Practically_Me</string>
+    <string name="title_activity_main">Practically_Me</string>
+    <string name="package_name">practically.me.app</string>
+    <string name="fileprovider_authority">practically.me.app.fileprovider</string>
+    <string name="custom_url_scheme">practically.me.app</string>
+</resources>
