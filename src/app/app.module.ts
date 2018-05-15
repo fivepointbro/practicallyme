@@ -1,4 +1,3 @@
-import { Capacitor } from '@capacitor/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { ErrorHandler, NgModule } from '@angular/core';

@@ -17,7 +17,7 @@ export class UserPage {
   id = localStorage.getItem('username');
   
 
-  constructor(public navCtrl: NavController, public wpProvider: WpProvider, public loadingCtrl: LoadingController, public plt: Platform, private socialSharing: SocialSharing) {
+  constructor(public navCtrl: NavController, public wpProvider: WpProvider, public loadingCtrl: LoadingController, public plt: Platform, public socialSharing: SocialSharing) {
     this.presentLoading();
     this.pics = this.wpProvider.getMyPics(this.id); 
     this.pics.subscribe(data => 
