@@ -1,6 +1,6 @@
 {
   "name": "practically_me",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "PracticallyPhotography",
   "homepage": "http://PracticallyPhotography.com/",
   "private": true,
@@ -36,12 +36,14 @@
     "android": "0.0.8",
     "angular-local-storage": "^0.7.1",
     "com-sarriaroman-photoviewer": "^1.1.16",
-    "cordova-browser": "^5.0.3",
-    "cordova-ios": "^4.5.4",
+    "cordova-android": "7.0.0",
+    "cordova-browser": "5.0.3",
+    "cordova-ios": "4.5.4",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^1.1.19",
     "cordova-plugin-splashscreen": "5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
     "cordova-plugin-x-socialsharing": "^5.4.0",
     "es6-promise-plugin": "^4.2.2",
@@ -66,11 +68,13 @@
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-x-socialsharing": {},
-      "com-sarriaroman-photoviewer": {}
+      "com-sarriaroman-photoviewer": {},
+      "cordova-plugin-statusbar": {}
     },
     "platforms": [
-      "ios",
-      "browser"
+      "browser",
+      "android",
+      "ios"
     ]
   }
 }

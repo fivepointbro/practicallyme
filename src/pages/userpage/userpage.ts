@@ -34,7 +34,7 @@ export class UserPage {
   regularShare(url){
     this.plt.ready().then((readySource) => {
       console.log('Platform ready from', readySource);
-    let file = 'https://practicallyphotography.com/opsec/'+this.id+'/'+ url
+    let file = 'https://practicallyphotography.com/opsec/'+this.id+'/'+ url;
     this.socialSharing.share(null, null, file, null).then(() => {
       console.log("regularShare: Success");
     }).catch(() => {
