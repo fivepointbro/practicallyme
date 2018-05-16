@@ -6,16 +6,11 @@
 
 </ion-header>
 
-<ion-content>
-  <ion-card *ngFor="let pic of pics | async">
-    <ion-card-content>
-      <ion-card-title>
-      {{ pic.url }}
-      </ion-card-title>
+<ion-slides>
+  <ion-slide *ngFor="let pic of pics | async">
       <img src='https://practicallyphotography.com/opsec/{{ id }}/{{ pic.url }}'>
-      </ion-card-content>
       <button ion-button icon-only (click)="regularShare(pic.url)" color="#000000" clear>
-        <ion-icon class="share-icon" name="share" color="#000000"></ion-icon>
+      <ion-icon class="share-icon" name="share" color="#000000"></ion-icon>
       </button>
-      </ion-card>
-</ion-content>
+      </ion-slide>
+</ion-slides>
