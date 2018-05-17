@@ -2,7 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Camera } from '@ionic-native/camera';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { IonicStorageModule } from '@ionic/storage';
@@ -60,7 +60,7 @@ export function createTranslateLoader(http: HttpClient) {
   providers: [
     Api,
     User,
-    Camera,
+    InAppBrowser,
     SplashScreen,
     StatusBar,
     // Keep this to enable Ionic's runtime error handling during development
