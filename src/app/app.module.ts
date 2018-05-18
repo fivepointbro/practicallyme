@@ -14,6 +14,7 @@ import { Http } from '@angular/http';
 import { User, Api } from '../providers';
 import { MyApp } from './app.component';
 import { WpProvider } from '../providers/wp/wp';
+import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { 
   WpApiModule,
   WpApiLoader,
@@ -61,6 +62,7 @@ export function createTranslateLoader(http: HttpClient) {
     Api,
     User,
     InAppBrowser,
+    PhotoViewer,
     SplashScreen,
     StatusBar,
     // Keep this to enable Ionic's runtime error handling during development

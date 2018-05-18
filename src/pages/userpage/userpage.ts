@@ -4,6 +4,7 @@ import { IonicPage, NavController, LoadingController, Loading} from 'ionic-angul
 import { WpProvider, Pic} from '../../providers/wp/wp';
 import { Observable } from 'rxjs/Observable';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { PhotoViewer } from '@ionic-native/photo-viewer';
 
 
 @IonicPage()
@@ -17,7 +18,7 @@ export class UserPage {
   id = localStorage.getItem('username');
   
 
-  constructor(public navCtrl: NavController, public wpProvider: WpProvider, public loadingCtrl: LoadingController, public plt: Platform, public socialSharing: SocialSharing) {
+  constructor(public navCtrl: NavController, public wpProvider: WpProvider, public loadingCtrl: LoadingController, public plt: Platform, public socialSharing: SocialSharing, private photoViewer: PhotoViewer) {
     this.presentLoading();
     this.pics = this.wpProvider.getMyPics(this.id); 
     this.pics.subscribe(data => 
@@ -29,6 +30,10 @@ export class UserPage {
       content: "Loading..."
     });
     this.loader.present();
+  }
+
+  openPic(url){
+    this.photoViewer.show(url);
   }
  
   regularShare(url){
