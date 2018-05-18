@@ -8,7 +8,7 @@
 <ion-content>
 <ion-grid>
   <ion-row>
-    <ion-col col-6 *ngFor="let pic of pics | async" tappable (click)="openPic('https://practicallyphotography.com/opsec/{{ id }}/{{ pic.url }}');" >
+    <ion-col col-6 *ngFor="let pic of pics | async" tappable (click)="openPic('https://practicallyphotography.com/opsec/'+id+'/'+pic.url);" >
         <img src='https://practicallyphotography.com/opsec/{{ id }}/{{ pic.url }}'> 
     </ion-col>
   </ion-row>
