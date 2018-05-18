@@ -21,10 +21,10 @@ export class SettingsPage {
 
 
 booking(){
-  var browser = this.theInAppBrowser.create('https://practicallyphotography.com/mobile-booking/','_blank','location=no, hidden=yes');
+  var browser = this.theInAppBrowser.create('https://practicallyphotography.com/mobile-booking/','_blank','hidden=yes');
     this.presentLoading();
     browser.on('loadstop').subscribe(event =>
-      {this.loader.dismiss()}, error => {this.loader.dismiss()}
+      {this.loader.dismiss(); browser.show();}, error => {this.loader.dismiss()}
     );
   }
 
