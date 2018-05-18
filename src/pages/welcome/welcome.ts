@@ -21,7 +21,8 @@ export class WelcomePage {
   }
 
   signup() {
-    localStorage.setItem('username', 'anon')
-    this.navCtrl.push('TabsPage');
+    if (localStorage.getItem('username')!='anon') { this.navCtrl.push('TabsPage'); } 
+    else {localStorage.setItem('username', 'anon')
+    this.navCtrl.push('TabsPage');}
   }
 }
