@@ -1,5 +1,5 @@
 import 'rxjs/add/operator/toPromise';
-
+import { LoadingController, Loading} from 'ionic-angular';
 import { Injectable } from '@angular/core';
 
 import { Api } from '../api/api';
@@ -26,8 +26,9 @@ import { Api } from '../api/api';
 @Injectable()
 export class User {
   _user: any;
+  loader: Loading;
 
-  constructor(public api: Api) { }
+  constructor(public api: Api, public loadingCtrl: LoadingController) { }
 
   /**
    * Send a POST request to our login endpoint with the data
@@ -35,12 +36,14 @@ export class User {
    */
   login(accountInfo: any) {
     let seq = this.api.post('v1/token', accountInfo).share();
-
+    this.presentLoading();
     seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in
       if (res.status == 'success') {
         this._loggedIn(res);
+        this.loader.dismiss();
       } else {
+        this.loader.dismiss();
       }
     }, err => {
       console.error('ERROR', err);
@@ -81,5 +84,12 @@ export class User {
   _loggedIn(resp) {
     this._user = resp.user;
     return console.log(this._user)
+  }
+
+  presentLoading() {
+    this.loader = this.loadingCtrl.create({
+      content: "Verifying Credentials..."
+    });
+    this.loader.present();
   }
 }
