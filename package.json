@@ -73,10 +73,10 @@
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-x-socialsharing": {},
-      "com-sarriaroman-photoviewer": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-nativestorage": {},
-      "cordova-plugin-inappbrowser": {}
+      "cordova-plugin-inappbrowser": {},
+      "com-sarriaroman-photoviewer": {}
     },
     "platforms": [
       "android",
