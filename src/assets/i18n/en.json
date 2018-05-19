@@ -19,17 +19,17 @@
   "TUTORIAL_CONTINUE_BUTTON": "Continue",
 
   "TUTORIAL_SLIDE1_TITLE": "Welcome to the Practically Me App",
-  "TUTORIAL_SLIDE1_DESCRIPTION": "The <b>Practically Me App</b> lets you carry your photo album wherever you go!",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "The <b>Practically Me App</b> lets you carry your photo album wherever you go! Simply log in and you will have secure access your photos.",
 
   "TUTORIAL_SLIDE2_TITLE": "Using the app",
-  "TUTORIAL_SLIDE2_DESCRIPTION": "Simply log in and you will have secure access to all of your private photos, which you can easily share with your friends!",
+  "TUTORIAL_SLIDE2_DESCRIPTION": "Navigate through the app with tabs, or pull out the menu to switch users.",
 
-  "TUTORIAL_SLIDE3_TITLE": "We're here for you",
-  "TUTORIAL_SLIDE3_DESCRIPTION": "With the Practically Me app, you can contact us any time and even access our online booking tool!",
+  "TUTORIAL_SLIDE3_TITLE": "We're ready when you are",
+  "TUTORIAL_SLIDE3_DESCRIPTION": "With the Practically Me app, you can contact us or book appointments instantly, from anywhere!",
 
   "TUTORIAL_SLIDE4_TITLE": "All set?",
 
-  "WELCOME_INTRO": "Log in for full access to your photos",
+  "WELCOME_INTRO": "Log in to access your photos, or simply continue if login not required",
 
   "SETTINGS_TITLE": "Settings",
   "SETTINGS_OPTION1": "Option 1",

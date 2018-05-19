@@ -1,9 +1,10 @@
-// Are we logged in?
-if (localStorage.getItem('username')!='anon') FirstRunPage = 'WelcomePage';
-else FirstRunPage = 'TutorialPage';
+if (localStorage.getItem('mainpage') == 'WelcomePage')
+{this.FirstPage = 'WelcomePage'}
+else {this.FirstPage = 'TutorialPage'}
+
 
 // The page the user lands on after opening the app and without a session
-export var FirstRunPage;
+export const FirstRunPage = this.FirstPage ;
 
 // The main page the user will see as they use the app over a long period of time.
 // Change this if not using tabs

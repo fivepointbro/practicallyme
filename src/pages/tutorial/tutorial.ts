@@ -51,7 +51,8 @@ export class TutorialPage {
   }
 
   startApp() {
-    localStorage.setItem('mainpage', 'welcome')
+    localStorage.setItem('username', 'anon')
+    localStorage.setItem('mainpage', 'WelcomePage')
     this.navCtrl.setRoot('WelcomePage', {}, {
       animate: true,
       direction: 'forward'
