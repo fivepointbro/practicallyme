@@ -47,6 +47,7 @@ export class User {
       }
     }, err => {
       console.error('ERROR', err);
+      this.loader.dismiss();
     });
 
     return seq;

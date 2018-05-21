@@ -6,12 +6,12 @@
 
 </ion-header>
 <ion-content>
-  <ion-segment [(ngModel)]="display" assertive>
+  <ion-segment [(ngModel)]="display">
     <ion-segment-button value="Gallery">
-      Gallery Grid
+      Grid
     </ion-segment-button>
     <ion-segment-button value="Slides">
-      Fullscreen Slides
+      Slides
     </ion-segment-button>
   </ion-segment>
 
@@ -24,7 +24,7 @@
 </ion-grid>
 
 <ion-slides pager="true" *ngIf="display === 'Slides'" >
-  <ion-slide *ngFor="let pic of pics | async">
+  <ion-slide *ngFor="let pic of pics | async" tappable (click)="openPic('https://practicallyphotography.com/opsec/'+id+'/'+pic.url);" >
       <img src='https://practicallyphotography.com/opsec/{{ id }}/{{ pic.url }}'> 
   </ion-slide> 
 </ion-slides>

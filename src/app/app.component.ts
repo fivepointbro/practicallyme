@@ -10,7 +10,7 @@ import { FirstRunPage } from '../pages';
   template: `<ion-menu [content]="content">
     <ion-header>
       <ion-toolbar>
-        <ion-title>Pages</ion-title>
+        <ion-title>Menu</ion-title>
       </ion-toolbar>
     </ion-header>
 
@@ -31,8 +31,8 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: 'Login', component: 'LoginPage' },
-    { title: 'Home', component: 'TabsPage' },
+    { title: 'Log In', component: 'LoginPage' },
+    { title: 'Log Out', component: 'ClearPage' },
   ]
 
   constructor(private translate: TranslateService, platform: Platform, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen, public socialSharing: SocialSharing) {

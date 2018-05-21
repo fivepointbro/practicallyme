@@ -39,7 +39,6 @@ export class LoginPage {
       this.navCtrl.push(MainPage);
     }, (err) => {
       localStorage.setItem('username', 'anon');
-      this.navCtrl.push(MainPage);
       // Unable to log in
       let toast = this.toastCtrl.create({
         message: this.loginErrorString,
