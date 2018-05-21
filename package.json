@@ -79,9 +79,9 @@
       "com-sarriaroman-photoviewer": {}
     },
     "platforms": [
-      "android",
       "ios",
-      "browser"
+      "browser",
+      "android"
     ]
   }
 }
