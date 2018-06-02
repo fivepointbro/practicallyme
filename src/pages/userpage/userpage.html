@@ -1,19 +1,21 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>My Photos</ion-title>    
+    <ion-segment [(ngModel)]="display">
+      <ion-segment-button value="Gallery">
+        Grid
+      </ion-segment-button>
+      <ion-segment-button value="Slides">
+        Slides
+      </ion-segment-button>
+    </ion-segment>    
   </ion-navbar>
-
+  
 </ion-header>
 <ion-content>
-  <ion-segment [(ngModel)]="display">
-    <ion-segment-button value="Gallery">
-      Grid
-    </ion-segment-button>
-    <ion-segment-button value="Slides">
-      Slides
-    </ion-segment-button>
-  </ion-segment>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
   <ion-grid *ngIf="display === 'Gallery'">
   <ion-row>

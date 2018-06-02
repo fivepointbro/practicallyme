@@ -41,16 +41,17 @@ export class WpProvider {
 
   getMyPics(username: string): Observable<Pic[]> {
     return this.http.get('https://practicallyphotography.com/opsec/' + username + '/dir.php')
-    .map( res => res.json())
-    .map( data => {
+    .map(res => res.json())
+    .map(data => {
     var pics = [];
     for (let pic of data['files']) {
       let onePic = new Pic(pic[ 'file' ]);
       pics.push(onePic);
     }
+      console.log(pics);
       return pics;
-    })
-    ;}
+    });
+  }
   
   getPosts(): Observable<Post[]> {
     return this.wpApiPosts.getList()
